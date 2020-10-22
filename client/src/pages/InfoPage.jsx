@@ -5,7 +5,7 @@ export class InfoPage extends Component {
 
     render() {
         return (
-            <div class="lyrics-bkg" >
+            <div class="MainPage-bkg" >
                 <SpotifyData/> 
             </div>
         )

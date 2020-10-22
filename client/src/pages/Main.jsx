@@ -7,8 +7,8 @@ export class Home extends Component {
     render() {
         return (
             <div id="grad">
-                <div class='login-box' style={homeStyle} >
-                    <h1>Welcome to Lyrio</h1>
+                <div class='login' style={homeStyle} >
+                    <h1>Welcome to SpotiStat</h1>
                     <h2>Login with Spotify to get started</h2>
                     <a className="button" href={login} > LOGIN </a>
                 </div>
