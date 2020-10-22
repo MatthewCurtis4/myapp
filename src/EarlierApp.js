@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
 import './App.css';
-//import TTopArtists from './getArtist';
-import sample1 from './sample';
-//import './getArtist.js';
+
+import NavBar from './components/navbar';
+
 /* eslint-disable */
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import SpotifyWebApi from 'spotify-web-api-js';
-//require('getArtist.js')();
 const spotifyApi = new SpotifyWebApi();
 var playlists = [];
-
+/*
+import {Navigation} from './Navigation';
+import Button from 'react-bootstrap/Button';
+(function() {
+  ("#includedContent").load("./navbasic.html"); 
+  });
+  {
+    document.write("navbasic.html");
+    }
+src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" 
+integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" 
+crossorigin="anonymous">
+*/
 //var getArtist = require('./getArtist');
 //console.log(typeof GetArtist.testTopArtists); // => 'function'
 //console.log(typeof getArtist.bar); // => 'function'
 //console.log(typeof tools.zemba); // => undefined
+
 class App extends Component {
   constructor(){
     super();
@@ -22,15 +36,9 @@ class App extends Component {
   }
     this.state = {
       loggedIn: params.access_token ? true : false,
-      
-      TopArtist: { name: 'Not Checked' },
       nowPlaying: { name: 'Not Checked', albumArt: '' }
-      ,TopArtists: { name: 'Not Checked', popularity: '' },
-      Playlists: { name: 'Not Checked' },
-      Artiststuff: {name: []},
-      UsersTopArtists: {name: []}
+
     }
-      this.playlists = [];
     this.artiststate = {
       loggedIn: params.access_token ? true : false,
     }
@@ -169,11 +177,11 @@ class App extends Component {
             document.getElementById('results').innerHTML = value ;
       });
       }
-
+/*
 tesTopArtists () {
   var list = [];
   var string = "";
-  spotifyApi.getMyTopArtists({limit:60}).then(
+  spotifyApi.getMyTopArtists({limit:30, time_range:medium_term}).then(
     function (data) {
       data.items.forEach(function (track, index) {
         list.push(index+1 + " ");
@@ -186,7 +194,6 @@ tesTopArtists () {
         //var brk = list.split(',');
         var neww = JSON.stringify(list);
         //var res = brk.join(" <br> ");
-
        // document.write(track.name);
        //var result = list.replace(",", "");
        var newlist = list.join(",");
@@ -205,8 +212,6 @@ tesTopArtists () {
       console.error(err);
     }
   );
-
-
   //JSON.stringify(list);
   var energy = list.join();
   //list.join();
@@ -219,11 +224,10 @@ this.setState({
     name: x
   }
 });
-
 }
-
-testTopArtists(){
-  spotifyApi.getMyTopArtists({limit:60}).then(
+*/
+testTopArtists(T_range){
+  spotifyApi.getMyTopArtists({limit:20, time_range:T_range}).then(
     function (data) { 
       var tools = require('./getArtist.js');
       var value = tools.top(data);
@@ -234,7 +238,20 @@ testTopArtists(){
 });
 }
 
+testTopTracks(T_range){
+  spotifyApi.getMyTopTracks({limit:20, time_range:T_range}).then(
+    function (data) { 
+      var tools = require('./getArtist.js');
+      var value = tools.top(data);
+      //console.log(value);
+      //console.log(tools.multiply(5,4));
+      //var returnResult = sample1("SampleString");
+      document.getElementById('TopTracks').innerHTML = value ;
+});
+}
 
+
+/*
   ordertop(response){
     while (this.state.TopArtists.name.items[i] != null){
       list.push(this.state.TopArtists.name.items[i].name) 
@@ -242,71 +259,73 @@ testTopArtists(){
       var x = list.toString();
       return x
   }
+  */
   render() {
     return (
-      <div className="App">
-        <a href='http://localhost:8888' > Login to Spotify </a>
+/* Will not let me comment in rend */
+<React.Fragment>
+        <NavBar/>
+<div className="App">
 
-        <ul>
-  <li><a href="#FavArtists">Favorite Artists</a></li>
-  <li><a href="#FavSongs">Favorite Songs</a></li>
-  <li class="dropdown">
-    <a href="#" class="dropbtn">Other</a>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </li>
-</ul>
 
-        
-        <h2><b>Want To See Your Top Streamed Artists?</b></h2>
-        <h3>Select a Time Range</h3>
-        <div class="row">
-                <div class="col">
-                    <a href="https://ampl.ink/j4blV">Past Month</a>
-                </div>
-                <div class="col">
-                    <a href="https://ampl.ink/VD2Ke">Past 6 Months</a>
-                </div>
-                <div class="col">
-                    <a href="https://ampl.ink/nDwYA">All Time</a>  
-                </div>        
-            </div>
-      <div id="bottom_pane_options">
-     <button onclick="this.test();">Try It</button>
-     <div id="results"></div>
+<h1><b>Welcome to SpotiStat</b></h1>
+  
+  <a href='http://localhost:8888' ><b className="Darker"><u>Click Here to Login to Spotify</u></b> </a>
+  <h3><b>Want To See Your Top Streamed Artists?</b></h3>
+  <h4><b>Select a Time Range</b></h4>
+  <div className="row">
+          <div className="col">
+          { this.state.loggedIn &&
+    <button onClick={() => this.testTopArtists("short_term")}>
+      Past Month
+    </button>}
+          </div>
+          <div className="col">
+          { this.state.loggedIn &&
+    <button onClick={() => this.testTopArtists("medium_term")}>
+      Past 6 Months
+    </button>}
+          </div>
+          <div className="col">
+          { this.state.loggedIn &&
+    <button onClick={() => this.testTopArtists("long_term")}>
+      All Time
+    </button>}
+          </div>        
       </div>
 
-      <div id="bottom_pane_options">
-     <button onclick="this.testTopArtists();">Find your top artists</button>
-     <div id="TopArtists"></div>
+      <div id="TopArtists"></div>
+
+      <h3><b>Want To See Your Top Streamed Artists?</b></h3>
+  <h4><b>Select a Time Range</b></h4>
+  <div className="row">
+          <div className="col">
+          { this.state.loggedIn &&
+    <button onClick={() => this.testTopTracks("short_term")}>
+      Past Month
+    </button>}
+          </div>
+          <div className="col">
+          { this.state.loggedIn &&
+    <button onClick={() => this.testTopTracks("medium_term")}>
+      Past 6 Months
+    </button>}
+          </div>
+          <div className="col">
+          { this.state.loggedIn &&
+    <button onClick={() => this.testTopTracks("long_term")}>
+      All Time
+    </button>}
+          </div>        
       </div>
 
-      <div>
-          Top Artists: { this.state.UsersTopArtists.name }
-        </div>
-        <div>
-          Now Playing: { this.state.nowPlaying.name }
-        </div>
-        <div>
-                Your Top Song is: { this.state.TopArtists.name }
-          </div>
-          <div>
-                Top 1 love: {this.state.Artiststuff.name[0]}
-          </div>     
+            <div id="results"></div>
 
 
-          <div>
-                Your Top Song popularity is: { this.state.TopArtists.popularity }
-          </div>
-        <div>
-                Your Top Playlists are: { this.state.Playlist }
-          </div>
-          <div>
-                Your Top Artists are: { this.state.TopArtist.topArtist }
-          </div>
+     
+     <div id="TopTracks"></div>
+
+
         <div>
           <img src={this.state.nowPlaying.image} style={{ height: 150 }}/>
         </div>
@@ -316,7 +335,7 @@ testTopArtists(){
           </button>
         }
         { this.state.loggedIn &&
-          <button onClick={() => this.getTopTracks()}>
+          <button onClick={() => this.getTopTracks(medium_term)}>
             Top Tracks
           </button>
   }
@@ -343,20 +362,28 @@ testTopArtists(){
           <button onClick={() => this.testTopArtists()}>
             test Top Artists
           </button>}
-
       </div>
-    );
-  }
-}
+      </React.Fragment>
+      )
+
+  
+export default App;
+  /*
+  use 
+      <Switch>
+            Route path='/whatever' component={whatever}/>
+    </Switch>
+    in the return statement if you have a sub folder components with .js
+    file in it all all that is above that switch will stay on page even at switch
+*/    
+
+
         /*
           <div>
                 Your Top Artists are: { this.state.topArtists.name }
           </div>
-          */
-          /*
           <div>
                 Top love: {this.state.Artiststuff.name.forEach(function (track) 
                 { track.name;} )}
           </div>
           */
-export default App;

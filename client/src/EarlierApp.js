@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Main from './pages/Main';
+
 import NavBar from './components/navbar';
 
 /* eslint-disable */
@@ -250,15 +250,122 @@ testTopTracks(T_range){
 });
 }
 
+
+/*
+  ordertop(response){
+    while (this.state.TopArtists.name.items[i] != null){
+      list.push(this.state.TopArtists.name.items[i].name) 
+    }
+      var x = list.toString();
+      return x
+  }
+  */
   render() {
     return (
-      <BrowserRouter>
-        <Route exact path='/' component={Main}/>
-      </BrowserRouter>
+/* Will not let me comment in rend */
+<React.Fragment>
+        <NavBar/>
+<div className="App">
 
-      )
-    }
+
+<h1><b>Welcome to SpotiStat</b></h1>
+  
+  <a href='http://localhost:8888' ><b className="Darker"><u>Click Here to Login to Spotify</u></b> </a>
+  <h3><b>Want To See Your Top Streamed Artists?</b></h3>
+  <h4><b>Select a Time Range</b></h4>
+  <div className="row">
+          <div className="col">
+          { this.state.loggedIn &&
+    <button onClick={() => this.testTopArtists("short_term")}>
+      Past Month
+    </button>}
+          </div>
+          <div className="col">
+          { this.state.loggedIn &&
+    <button onClick={() => this.testTopArtists("medium_term")}>
+      Past 6 Months
+    </button>}
+          </div>
+          <div className="col">
+          { this.state.loggedIn &&
+    <button onClick={() => this.testTopArtists("long_term")}>
+      All Time
+    </button>}
+          </div>        
+      </div>
+
+      <div id="TopArtists"></div>
+
+      <h3><b>Want To See Your Top Streamed Artists?</b></h3>
+  <h4><b>Select a Time Range</b></h4>
+  <div className="row">
+          <div className="col">
+          { this.state.loggedIn &&
+    <button onClick={() => this.testTopTracks("short_term")}>
+      Past Month
+    </button>}
+          </div>
+          <div className="col">
+          { this.state.loggedIn &&
+    <button onClick={() => this.testTopTracks("medium_term")}>
+      Past 6 Months
+    </button>}
+          </div>
+          <div className="col">
+          { this.state.loggedIn &&
+    <button onClick={() => this.testTopTracks("long_term")}>
+      All Time
+    </button>}
+          </div>        
+      </div>
+
+            <div id="results"></div>
+
+
+     
+     <div id="TopTracks"></div>
+
+
+        <div>
+          <img src={this.state.nowPlaying.image} style={{ height: 150 }}/>
+        </div>
+        { this.state.loggedIn &&
+          <button onClick={() => this.getNowPlaying()}>
+            Check Now Playing
+          </button>
+        }
+        { this.state.loggedIn &&
+          <button onClick={() => this.getTopTracks(medium_term)}>
+            Top Tracks
+          </button>
   }
+          { this.state.loggedIn &&
+          <button onClick={() => this.Getplaylists()}>
+            Get Playlists
+          </button>}
+          { this.state.loggedIn &&
+          <button onClick={() => this.GetArtists()}>
+            Get Artist
+          </button>}
+
+          { this.state.loggedIn &&
+          <button onClick={() => this.getTopTracksCONSOLE()}>
+            Get top for person
+          </button>}
+
+          { this.state.loggedIn &&
+          <button onClick={() => this.test()}>
+            test
+          </button>}
+
+          { this.state.loggedIn &&
+          <button onClick={() => this.testTopArtists()}>
+            test Top Artists
+          </button>}
+      </div>
+      </React.Fragment>
+      )
+
   
 export default App;
   /*

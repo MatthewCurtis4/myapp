@@ -1,0 +1,336 @@
+.App {
+  padding-top: 80px;
+  background-color: greenyellow;
+}
+.Darker {
+  color: black;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+div, button {
+  margin: 15px;
+}
+
+.row:after{
+	clear:both;
+}
+
+.col {
+	background: grey;
+	/*border-radius: 5px;/*make rounded corners*/
+	padding: 10px 5px;
+	color: black;
+	float: left;
+	margin: 0.5%;
+	width: 15%;/*each of the columns take up 33%
+	(so in total take up whole width)
+	can use % for width, margin etc. if it goes over 100%
+	it will just keep wrapping around
+	USE PERCENTAGE CHANGES if you want it to look nice
+	on all devices and all sized browsers*/
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+body{
+	background:#999;
+	font-family: arial;
+}
+
+body.main{
+	background: white;
+	font-family: arial;
+}
+
+.wrapper{
+	text-align: center;
+	padding-top: 10px;
+}
+
+h1 {
+	color: #555;
+}
+
+h4 {
+  color: green;
+	text-align: center;
+	padding: 5px 5px 5px 5px;
+	
+}
+
+a {
+	color: white;
+}
+li {
+	color: #333;
+}
+
+p {
+	background: #666;
+	color: white;
+	padding: 12px;
+	text-align: center;
+}
+
+.darker {
+	background: #333;
+	border-radius: 5px;/*make rounded corners*/
+	padding: 10px 10px 10px 10px;
+	width: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+	/*text-align center;*/
+}
+
+.nav-link{
+	color: black;
+}
+
+h2.titlestart {
+	/*border: 1px solid red;*/
+	padding: 30px 0px 20px 0px;
+}
+h2 {text-align: center;}
+
+.indexButton {
+	color: #111;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+  }
+
+  .centersmall {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 30%;
+  }
+
+
+.pb-3 {
+	
+}
+.row{
+	padding: 20px 20px 20px 20px;
+}
+.row:after{
+
+	clear:both;
+}
+
+.col {
+	background: #333;
+	border-radius: 5px;/*make rounded corners*/
+	/*padding: 10px 5px;*/
+	padding: 10px 5px;
+	color: white;
+	float: left;
+	margin: 0.5%;
+	text-align: center;
+	width: 30%;/*each of the columns take up 33%
+	(so in total take up whole width)
+	can use % for width, margin etc. if it goes over 100%
+	it will just keep wrapping around
+	USE PERCENTAGE CHANGES if you want it to look nice
+	on all devices and all sized browsers*/
+}
+
+.col-emptybg {
+	border-radius: 5px;/*make rounded corners*/
+	/*padding: 10px 5px;*/
+	padding: 10px 5px;
+	color: white;
+	float: left;
+	margin: 0.5%;
+	text-align: center;
+	width: 48%;/*each of the columns take up 33%
+	(so in total take up whole width)
+	can use % for width, margin etc. if it goes over 100%
+	it will just keep wrapping around
+	USE PERCENTAGE CHANGES if you want it to look nice
+	on all devices and all sized browsers*/
+}
+
+ul {
+	background: rgba(255, 255, 255, 0.3);
+  }
+
+/*
+use this if i wanted to do an id
+*/
+#smaller-image{
+	width: 90%;
+	height: auto;
+}
+
+
+img.rounded-corners {
+	border-radius: 30px;
+  }
+
+  .socialLinks a {
+    font-size: 35px;
+    margin: 0 10px 0 0;
+    color: #000000;
+    text-decoration: none;
+}
+
+.Contactcontainer{
+	padding-top: 80px;
+	text-align: center;
+	padding-bottom: 10px;
+	
+}
+
+h1.darkercolor{
+	color: black;
+}
+
+.contactandsocials{
+	background-color: black;
+	margin-top: 5px;
+	display: flex;
+	vertical-align: middle;
+}
+
+.center-vertically {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-height: 100vh;
+  }
+
+div.form-group{
+	text-align: left;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  margin-bottom: 0px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;/*make rounded corners*/
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	border-radius: 10px;/*make rounded corners*/
+  background-color: aquamarine;
+  min-width: 170px;
+  margin: 0px;
+  outline-color: black;
+  outline-style: groove;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: flex;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
