@@ -380,12 +380,7 @@ testTopTracks(T_range){
 
 
 */    
-  };
-  function() {
-    ("#includedContent").load("./navbasic.html"); 
-    };
 
-}
 
         /*
           <div>

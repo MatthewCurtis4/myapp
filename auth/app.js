@@ -14,9 +14,9 @@ var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
-var client_id = 'ffdf3d59d52948f398282ccf69e00f29'; // Your client id
-var client_secret = '6ba241bc1eb24a449b7d1f12953490dd'; // Your secret
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+var client_id = process.env.SPOTIFY_CLIENT_ID; // Your client id
+var client_secret = process.env.SPOTIFY_CLIENT_SC; // Your secret
+var port = process.env.PORT || 'http://localhost:8888/';
 
 /**
  * Generates a random string containing numbers and letters
@@ -105,7 +105,7 @@ app.get('/callback', function(req, res) {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect('https://matthewcurtis4.github.io/myapp/#' +
+        res.redirect('http://localhost:8888/#' +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
@@ -145,4 +145,4 @@ app.get('/refresh_token', function(req, res) {
 });
 
 console.log('Listening on 8888');
-app.listen(process.env.PORT || 8888);
+app.listen(port);
