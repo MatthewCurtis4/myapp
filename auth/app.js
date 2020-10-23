@@ -14,10 +14,8 @@ var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
-//var client_id = process.env.SPOTIFY_CLIENT_ID; // Your client id
-//var client_secret = process.env.SPOTIFY_CLIENT_SC; // Your secret
-var client_id = '60accc7e4de3412abc53f336e76c11ec'; // Your client id
-var client_secret = 'f5e834d6c51d41e9bdfef1ae6cc60211'; // Your secret
+var client_id = process.env.SPOTIFY_CLIENT_ID; // Your client id
+var client_secret = process.env.SPOTIFY_CLIENT_SECRET; // Your secret
 var redirect_uri = process.env.REDIRECT_URI || 'http://localhost:8888/callback/';
 var frontend_redirect = process.env.REDIRECT_URI || 'http://localhost:3000/InfoPage'
 /**
@@ -53,7 +51,7 @@ app.get('/login', function(req, res) {
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
       response_type: 'code',
-      client_id: client_id,
+      client_id: process.env.SPOTIFY_CLIENT_ID,
       scope: scope,
       redirect_uri: redirect_uri,
       state: state
@@ -84,7 +82,7 @@ app.get('/callback', function(req, res) {
         grant_type: 'authorization_code'
       },
       headers: {
-        'Authorization': 'Basic ' + (Buffer.from(client_id + ':' + client_secret).toString('base64'))
+        'Authorization': 'Basic ' + (Buffer.from(process.env.SPOTIFY_CLIENT_ID + ':' + process.env.SPOTIFY_CLIENT_SECRET).toString('base64'))
       },
       json: true
     };
@@ -128,7 +126,7 @@ app.get('/refresh_token', function(req, res) {
   var refresh_token = req.query.refresh_token;
   var authOptions = {
     url: 'https://accounts.spotify.com/api/token',
-    headers: { 'Authorization': 'Basic ' + (Buffer.from(client_id + ':' + client_secret).toString('base64')) },
+    headers: { 'Authorization': 'Basic ' + (Buffer.from(process.env.SPOTIFY_CLIENT_ID + ':' + process.env.SPOTIFY_CLIENT_SECRET).toString('base64')) },
     form: {
       grant_type: 'refresh_token',
       refresh_token: refresh_token
