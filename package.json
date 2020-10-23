@@ -2,7 +2,7 @@
   "name": "SpotiStat",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://github.com/MatthewCurtis4/SpotiStat/express",
+  "homepage" : "./express",
   "engines": {
     "npm": "6.14.4",
     "node": "12.16.3"
