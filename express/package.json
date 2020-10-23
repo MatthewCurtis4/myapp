@@ -2,7 +2,6 @@
   "name": "authtest",
   "version": "1.0.0",
   "description": "Spotify Auth Server",
-  "main": "app.js",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -32,3 +31,4 @@
   "author": "Spotify",
   "license": "ISC"
 }
+

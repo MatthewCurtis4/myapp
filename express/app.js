@@ -19,7 +19,7 @@ var client_secret = process.env.SPOTIFY_CLIENT_SECRET; // Your secret
 //var client_id = '60accc7e4de3412abc53f336e76c11ec';
 //var client_secret = 'f5e834d6c51d41e9bdfef1ae6cc60211';
 var redirect_uri = process.env.REDIRECT_URI || 'http://localhost:8888/callback/';
-var frontend_redirect = process.env.REDIRECT_URI || 'http://localhost:3000/InfoPage'
+var frontend_redirect = process.env.REDIRECT_URI || 'https://quiet-earth-27756.herokuapp.com/InfoPage';
 /**
  * Generates a random string containing numbers and letters
  * @param  {number} length The length of the string
