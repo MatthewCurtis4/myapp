@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GetInfo from '../components/GetInfo'
+import GetInfo from '../components/GetInfo';
 
 export class InfoPage extends Component {
 

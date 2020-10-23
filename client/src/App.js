@@ -8,7 +8,7 @@ import InfoPage from './pages/InfoPage';
     return (
       <BrowserRouter>
         <Route exact path='/' component={Main}/>
-        <Route exact path='/InfoPage' component={InfoPage}/>
+        <Route path='/InfoPage' component={InfoPage}/>
       </BrowserRouter>
 
       )
