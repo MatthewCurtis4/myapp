@@ -16,10 +16,10 @@ var cookieParser = require('cookie-parser');
 
 //var client_id = process.env.SPOTIFY_CLIENT_ID; // Your client id
 //var client_secret = process.env.SPOTIFY_CLIENT_SC; // Your secret
-var client_id = ''; // Your client id
-var client_secret = ''; // Your secret
-var redirect_uri = 'http://localhost:8888/callback/';
-var frontend_redirect = 'http://localhost:3000/InfoPage/';
+var client_id = '60accc7e4de3412abc53f336e76c11ec'; // Your client id
+var client_secret = 'f5e834d6c51d41e9bdfef1ae6cc60211'; // Your secret
+var redirect_uri = process.env.REDIRECT_URI || 'http://localhost:8888/callback/';
+var frontend_redirect = process.env.REDIRECT_URI || 'http://localhost:3000/InfoPage'
 /**
  * Generates a random string containing numbers and letters
  * @param  {number} length The length of the string
@@ -107,7 +107,7 @@ app.get('/callback', function(req, res) {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect('http://localhost:3000/#' +
+        res.redirect(frontend_redirect + '#' +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
