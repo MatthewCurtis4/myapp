@@ -18,7 +18,7 @@ export class Home extends Component {
 }
 
 const homeStyle = { 
-    //backgroundColor: '#cc55aa',
+    backgroundColor: '#cc55aa',
     textAlign:'center',
     overflow: 'auto'
 }
