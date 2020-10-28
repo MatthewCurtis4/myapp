@@ -5,7 +5,6 @@
 
 
 .login { 
-	background-color: blue;
 	text-align: center;
     overflow: 'auto'
 }
@@ -200,9 +199,7 @@ h2 {text-align: center;}
   }
 
 
-.pb-3 {
-	
-}
+
 .row{
 	padding: 20px 20px 20px 20px;
 }

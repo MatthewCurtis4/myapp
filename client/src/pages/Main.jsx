@@ -6,13 +6,11 @@ export class Home extends Component {
 
     render() {
         return (
-            <div id="grad">
                 <div class="login">
                     <h1>Welcome to SpotiStat</h1>
                     <h2>Login with Spotify to get started</h2>
                     <a className="button" href={login} > LOGIN </a>
                 </div>
-            </div>
         )
     }
 }

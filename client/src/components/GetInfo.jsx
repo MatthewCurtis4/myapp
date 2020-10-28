@@ -63,14 +63,7 @@ export class GetInfo extends Component {
         })
     }
 
-      /*  
-        function (data) {
-          self.playlists.push(console.log(data));
-        },
-        function (err) {
-          console.error(err);
-        }
-        */
+
       GetArtists(){
       spotifyApi.getArtist('2hazSY4Ef3aB9ATXW7F5w3').then(
         function (data) {
@@ -130,13 +123,6 @@ export class GetInfo extends Component {
     })
   }
 
-  getTopTracksCONSOLE(){
-    spotifyApi.getArtistTopTracks('0oSGxfWSnnOXhD2fKuz2Gy', 'GB').then(function(data) {
-      console.log('The most popular tracks for David Bowie is..');
-      console.log('Drum roll..');
-      console.log('...');
-
-    });}
   
     test () {
         spotifyApi.searchArtists('Love', {limit:15}).then(
@@ -257,7 +243,7 @@ testTopTracks(T_range){
           </button>
         }
         { this.state.loggedIn &&
-          <button onClick={() => this.getTopTracks(medium_term)}>
+          <button onClick={() => this.getTopTracks("medium_term")}>
             Top Tracks
           </button>
   }
@@ -268,11 +254,6 @@ testTopTracks(T_range){
           { this.state.loggedIn &&
           <button onClick={() => this.GetArtists()}>
             Get Artist
-          </button>}
-
-          { this.state.loggedIn &&
-          <button onClick={() => this.getTopTracksCONSOLE()}>
-            Get top for person
           </button>}
 
           { this.state.loggedIn &&
