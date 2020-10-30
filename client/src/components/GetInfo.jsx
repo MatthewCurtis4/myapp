@@ -123,27 +123,15 @@ export class GetInfo extends Component {
     })
   }
 
-  
-    test () {
-        spotifyApi.searchArtists('Love', {limit:15}).then(
-          function (data) { 
-            var tools = require('./getArtist.js');
-            var value = tools.topLove(data);
-            //console.log(value);
-            //console.log(tools.multiply(5,4));
-            //var returnResult = sample1("SampleString");
-            document.getElementById('results').innerHTML = value ;
-      });
-      }
+
 
 testTopArtists(T_range){
   spotifyApi.getMyTopArtists({limit:20, time_range:T_range}).then(
     function (data) { 
       var tools = require('./getArtist.js');
+      //got top from getArtist.js
       var value = tools.top(data);
-      //console.log(value);
-      //console.log(tools.multiply(5,4));
-      //var returnResult = sample1("SampleString");
+
       document.getElementById('TopArtists').innerHTML = value ;
 });
 }
@@ -153,9 +141,7 @@ testTopTracks(T_range){
     function (data) { 
       var tools = require('./getArtist.js');
       var value = tools.top(data);
-      //console.log(value);
-      //console.log(tools.multiply(5,4));
-      //var returnResult = sample1("SampleString");
+
       document.getElementById('TopTracks').innerHTML = value ;
 });
 }
