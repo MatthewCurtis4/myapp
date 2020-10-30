@@ -137,7 +137,7 @@ testTopArtists(T_range){
 }
 
 testTopTracks(T_range){
-  spotifyApi.getMyTopTracks({limit:20, time_range:T_range}).then(
+  spotifyApi.getMyTopTracks({limit:50, time_range:T_range}).then(
     function (data) { 
       var tools = require('./getArtist.js');
       var value = tools.top(data);
@@ -147,15 +147,7 @@ testTopTracks(T_range){
 }
 
 
-/*
-  ordertop(response){
-    while (this.state.TopArtists.name.items[i] != null){
-      list.push(this.state.TopArtists.name.items[i].name) 
-    }
-      var x = list.toString();
-      return x
-  }
-  */
+
   render() {
     return (
         
@@ -213,15 +205,12 @@ testTopTracks(T_range){
           </div>        
       </div>
 
-            <div id="results"></div>
-
-
-     
-     <div id="TopTracks"></div>
-
 
         <div>
           <img src={this.state.nowPlaying.image} style={{ height: 150 }}/>
+        </div>
+        <div>
+          <img src={this.state.nowPlaying.name} style={{ height: 150 }}/>
         </div>
         { this.state.loggedIn &&
           <button onClick={() => this.getNowPlaying()}>
@@ -242,10 +231,7 @@ testTopTracks(T_range){
             Get Artist
           </button>}
 
-          { this.state.loggedIn &&
-          <button onClick={() => this.test()}>
-            test
-          </button>}
+
 
           { this.state.loggedIn &&
           <button onClick={() => this.testTopArtists()}>
