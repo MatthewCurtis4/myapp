@@ -137,7 +137,7 @@ testTopArtists(T_range){
 }
 
 testTopTracks(T_range){
-  spotifyApi.getMyTopTracks({limit:50, time_range:T_range}).then(
+  spotifyApi.getMyTopTracks({limit:49, time_range:T_range}).then(
     function (data) { 
       var tools = require('./getArtist.js');
       var value = tools.top(data);
