@@ -115,7 +115,7 @@ export class GetInfo extends Component {
     spotifyApi.getMyTopTracks()
     .then((response) => {
       this.setState({
-        TopArtists: { 
+        TopSongs: { 
           name: response.items[0].album.name, 
           popularity: response.items[0].popularity
         }
@@ -126,27 +126,26 @@ export class GetInfo extends Component {
 
 
 testTopArtists(T_range){
-  spotifyApi.getMyTopArtists({limit:20, time_range:T_range}).then(
+  spotifyApi.getMyTopArtists({limit:30, time_range:T_range}).then(
     function (data) { 
-      var tools = require('./getArtist.js');
+      var tools = require('./getTop.js');
       //got top from getArtist.js
       var value = tools.top(data);
 
       document.getElementById('TopArtists').innerHTML = value ;
+      /* TopArtists or whatever is in there is just calling the section that is below on output section*/
 });
 }
 
 testTopTracks(T_range){
-  spotifyApi.getMyTopTracks({limit:49, time_range:T_range}).then(
+  spotifyApi.getMyTopTracks({limit:30, time_range:T_range}).then(
     function (data) { 
-      var tools = require('./getArtist.js');
+      var tools = require('./getTop.js');
       var value = tools.top(data);
 
-      document.getElementById('TopTracks').innerHTML = value ;
+      document.getElementById('TopSongs').innerHTML = value ;
 });
 }
-
-
 
   render() {
     return (
@@ -205,12 +204,14 @@ testTopTracks(T_range){
           </div>        
       </div>
 
+      <div id="TopSongs"></div>
+
 
         <div>
           <img src={this.state.nowPlaying.image} style={{ height: 150 }}/>
         </div>
         <div>
-          <img src={this.state.nowPlaying.name} style={{ height: 150 }}/>
+          <text src={this.state.nowPlaying.name}/>
         </div>
         { this.state.loggedIn &&
           <button onClick={() => this.getNowPlaying()}>
