@@ -46,10 +46,16 @@ export class GetInfo extends Component {
         this.setState({
           nowPlaying: { 
               name: response.item.name, 
+              songName: response.item.artists[0].name,
               image: response.item.album.images[0].url
             }
         });
-      })
+        var cSong = this.state.nowPlaying.name;
+        var cArtist = this.state.nowPlaying.songName;
+        document.getElementById('PlayingNamesong').innerHTML = cSong ;
+        document.getElementById('PlayingNameartist').innerHTML = cArtist ;})      
+
+
   }
   Getplaylists(){
     spotifyApi
@@ -126,19 +132,21 @@ export class GetInfo extends Component {
 
 
 testTopArtists(T_range){
-  spotifyApi.getMyTopArtists({limit:30, time_range:T_range}).then(
+  spotifyApi.getMyTopArtists({limit:50, time_range:T_range}).then(
     function (data) { 
       var tools = require('./getTop.js');
       //got top from getArtist.js
       var value = tools.top(data);
 
       document.getElementById('TopArtists').innerHTML = value ;
-      /* TopArtists or whatever is in there is just calling the section that is below on output section*/
-});
+      /* TopArtists or whatever is in there is just calling the section that is below on output section
+      line above is what prints out the results very important*/
+
+    });
 }
 
 testTopTracks(T_range){
-  spotifyApi.getMyTopTracks({limit:30, time_range:T_range}).then(
+  spotifyApi.getMyTopTracks({limit:50, time_range:T_range}).then(
     function (data) { 
       var tools = require('./getTop.js');
       var value = tools.top(data);
@@ -206,38 +214,20 @@ testTopTracks(T_range){
 
       <div id="TopSongs"></div>
 
-
         <div>
           <img src={this.state.nowPlaying.image} style={{ height: 150 }}/>
         </div>
-        <div>
-          <text src={this.state.nowPlaying.name}/>
-        </div>
+
+        <div id="PlayingNamesong"></div>
+        
+        <div id="PlayingNameartist"></div>
+
         { this.state.loggedIn &&
           <button onClick={() => this.getNowPlaying()}>
             Check Now Playing
           </button>
         }
-        { this.state.loggedIn &&
-          <button onClick={() => this.getTopTracks("medium_term")}>
-            Top Tracks
-          </button>
-  }
-          { this.state.loggedIn &&
-          <button onClick={() => this.Getplaylists()}>
-            Get Playlists
-          </button>}
-          { this.state.loggedIn &&
-          <button onClick={() => this.GetArtists()}>
-            Get Artist
-          </button>}
-
-
-
-          { this.state.loggedIn &&
-          <button onClick={() => this.testTopArtists()}>
-            test Top Artists
-          </button>}
+        
       </div>
       )
           }
