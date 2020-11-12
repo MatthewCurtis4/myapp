@@ -189,7 +189,7 @@ testTopTracks(T_range){
 
       <div id="TopArtists"></div>
 
-      <h3><b>Want To See Your Top Streamed Artists?</b></h3>
+      <h3><b>Want To See Your Top Streamed Songs?</b></h3>
   <h4><b>Select a Time Range</b></h4>
   <div className="row">
           <div className="col">
