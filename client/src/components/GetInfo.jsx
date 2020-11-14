@@ -6,8 +6,8 @@ import '../App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SpotifyWebApi from 'spotify-web-api-js';
+
 const spotifyApi = new SpotifyWebApi();
-var playlists = [];
 
 
 export class GetInfo extends Component {
@@ -70,53 +70,9 @@ export class GetInfo extends Component {
     }
 
 
-      GetArtists(){
-      spotifyApi.getArtist('2hazSY4Ef3aB9ATXW7F5w3').then(
-        function (data) {
-          //this.setState({topArtist: data})
-          //console.log('User playlists', data);
-        },
-        function (err) {
-          console.error(err);
-        }
-      );
-      }
-  topforperson(){
-    spotifyApi
-    .getArtistTopTracks()
-    .then(function(data) {
-      // Set the access token on the API object so that it's used in all future requests
-      spotifyApi.setAccessToken(data.body['access_token']);
-  
-      // Get the most popular tracks by David Bowie in Great Britain
-      return spotifyApi.getArtistTopTracks('0oSGxfWSnnOXhD2fKuz2Gy', 'GB');
-    })
-    .then(function(data) {
-      console.log('The most popular tracks for David Bowie is..');
-      console.log('Drum roll..');
-      console.log('...');
-  
-      /*
-       * 1. Space Oddity - 2009 Digital Remaster (popularity is 51)
-       * 2. Heroes - 1999 Digital Remaster (popularity is 33)
-       * 3. Let's Dance - 1999 Digital Remaster (popularity is 20)
-       * 4. ...
-      */
-      data.body.tracks.forEach(function(track, index) {
-        console.log(
-          index +
-            1 +
-            '. ' +
-            track.name +
-            ' (popularity is ' +
-            track.popularity +
-            ')'
-        );
-      });
-    })
-    .catch(function(err) {
-      console.log('Unfortunately, something has gone wrong.', err.message);
-    });}
+
+
+
   getTopTracks(){
     spotifyApi.getMyTopTracks()
     .then((response) => {
