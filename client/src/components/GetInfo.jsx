@@ -56,36 +56,7 @@ export class GetInfo extends Component {
         document.getElementById('PlayingNameartist').innerHTML = cArtist ;})      
 
 
-  }
-  Getplaylists(){
-    spotifyApi
-      .getUserPlaylists()
-      .then((response) => {
-        this.setState({
-          Playlists: { 
-              name : response.items[0].name
-            }
-          });
-        })
-    }
-
-
-
-
-
-  getTopTracks(){
-    spotifyApi.getMyTopTracks()
-    .then((response) => {
-      this.setState({
-        TopSongs: { 
-          name: response.items[0].album.name, 
-          popularity: response.items[0].popularity
-        }
-      });
-    })
-  }
-
-
+      }
 
 testTopArtists(T_range){
   spotifyApi.getMyTopArtists({limit:50, time_range:T_range}).then(
