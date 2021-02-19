@@ -6,7 +6,7 @@
 
 .login { 
 	text-align: center;
-    overflow: 'auto'
+    overflow: 'auto';
 }
 .Darker {
   color: black;
@@ -30,7 +30,7 @@
 div .login-style
 
 {
-  background: rgba(0,0,0,0.1);
+  background: rgb(223, 94, 94);
 
   height: 300px;
   min-width: 300px;
@@ -41,7 +41,7 @@ div .login-style
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 8px 16px 0 rgba(255, 0, 0), 0 6px 20px 0 rgba(248, 1, 1, 0.19);
 }
 
 .App-intro {
@@ -56,7 +56,10 @@ div .login-style
 div, button {
   margin: 15px;
 }
-
+div, button-center {
+	margin: 15px;
+	text-align: center;
+  }
 .row:after{
 	clear:both;
 }

@@ -9,7 +9,7 @@ export class Home extends Component {
                 <div class="login-style">
                     <h1>Welcome to SpotiStat</h1>
                     <h2>Login with Spotify to get started</h2>
-                    <a className="button" href={login} > LOGIN </a>
+                    <a className="button-center" href={login} > LOGIN </a>
                 </div>
         )
     }
