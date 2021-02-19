@@ -1,12 +1,25 @@
 .App {
   padding-top: 80px;
-  background-color: greenyellow;
+  background: rgb(104, 119, 187);
 }
 
 
-.login { 
+.login-style { 
 	text-align: center;
-    overflow: 'auto';
+	background: rgb(104, 119, 187);
+	  
+	height: 300px;
+	min-width: 300px;
+	padding: 80px;  
+	border-radius: 1.5em;
+	  
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	box-shadow: 0 8px 16px 0 rgba(255, 0, 0), 0 6px 20px 0 rgba(248, 1, 1, 0.19);
+    overflow: 'auto'
+
 }
 .Darker {
   color: black;
@@ -30,7 +43,7 @@
 div .login-style
 
 {
-  background: rgb(223, 94, 94);
+  background: rgb(124, 0, 0);
 
   height: 300px;
   min-width: 300px;
@@ -48,10 +61,6 @@ div .login-style
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
 div, button {
   margin: 15px;
@@ -91,55 +100,9 @@ li {
   float: left;
 }
 
-li a, .dropbtn {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
-
-li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: white;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-
-
-
-
-
-
-
-
-
 
 body{
-	background:#999;
+	background:red;
 	font-family: arial;
 }
 
@@ -154,11 +117,11 @@ body.main{
 }
 
 h1 {
-	color: #555;
+	color: white;
 }
 
 h4 {
-  color: green;
+  	color: black;
 	text-align: center;
 	padding: 5px 5px 5px 5px;
 	
@@ -228,46 +191,6 @@ h2 {text-align: center;}
 	clear:both;
 }
 
-.col {
-	background: #333;
-	border-radius: 5px;/*make rounded corners*/
-	/*padding: 10px 5px;*/
-	padding: 10px 5px;
-	color: white;
-	float: left;
-	margin: 0.5%;
-	text-align: center;
-	width: 30%;/*each of the columns take up 33%
-	(so in total take up whole width)
-	can use % for width, margin etc. if it goes over 100%
-	it will just keep wrapping around
-	USE PERCENTAGE CHANGES if you want it to look nice
-	on all devices and all sized browsers*/
-}
-
-.col-emptybg {
-	border-radius: 5px;/*make rounded corners*/
-	/*padding: 10px 5px;*/
-	padding: 10px 5px;
-	color: white;
-	float: left;
-	margin: 0.5%;
-	text-align: center;
-	width: 48%;/*each of the columns take up 33%
-	(so in total take up whole width)
-	can use % for width, margin etc. if it goes over 100%
-	it will just keep wrapping around
-	USE PERCENTAGE CHANGES if you want it to look nice
-	on all devices and all sized browsers*/
-}
-
-ul {
-	background: rgba(255, 255, 255, 0.3);
-  }
-
-/*
-use this if i wanted to do an id
-*/
 #smaller-image{
 	width: 90%;
 	height: auto;
@@ -278,83 +201,3 @@ img.rounded-corners {
 	border-radius: 30px;
   }
 
-  .socialLinks a {
-    font-size: 35px;
-    margin: 0 10px 0 0;
-    color: #000000;
-    text-decoration: none;
-}
-
-.Contactcontainer{
-	padding-top: 80px;
-	text-align: center;
-	padding-bottom: 10px;
-	
-}
-
-h1.darkercolor{
-	color: black;
-}
-
-.contactandsocials{
-	background-color: black;
-	margin-top: 5px;
-	display: flex;
-	vertical-align: middle;
-}
-
-.center-vertically {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	min-height: 100vh;
-  }
-
-div.form-group{
-	text-align: left;
-}
-
-/* Dropdown Button */
-.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  margin-bottom: 0px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;/*make rounded corners*/
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-	border-radius: 10px;/*make rounded corners*/
-  background-color: aquamarine;
-  min-width: 170px;
-  margin: 0px;
-  outline-color: black;
-  outline-style: groove;
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: flex;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
