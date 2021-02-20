@@ -4,6 +4,7 @@
 }
 
 
+
 .login-style { 
 	text-align: center;
 	background: rgb(104, 119, 187);
@@ -40,22 +41,7 @@
   color: white;
 }
 
-div .login-style
 
-{
-  background: rgb(124, 0, 0);
-
-  height: 300px;
-  min-width: 300px;
-  padding: 80px;  
-  border-radius: 1.5em;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  box-shadow: 0 8px 16px 0 rgba(255, 0, 0), 0 6px 20px 0 rgba(248, 1, 1, 0.19);
-}
 
 .App-intro {
   font-size: large;
@@ -102,7 +88,7 @@ li {
 
 
 body{
-	background:red;
+	background: rgb(104, 119, 187);;
 	font-family: arial;
 }
 
